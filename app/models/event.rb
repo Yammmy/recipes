@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  belongs_to :category, :optional => true
 
  validates_presence_of :name, :token
 
