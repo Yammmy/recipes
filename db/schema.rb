@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170416151050) do
+ActiveRecord::Schema.define(version: 20170417005036) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "token"
+    t.string   "status",      default: "draft"
     t.index ["token"], name: "index_events_on_token", unique: true
   end
 

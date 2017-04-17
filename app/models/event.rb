@@ -6,6 +6,10 @@ class Event < ApplicationRecord
 
  validates_format_of :token, :with => /\A[a-z0-9\-]+\z/
 
+  STATUS = ["draft", "public", "private"]
+
+ validates_inclusion_of :status, :in => STATUS
+
  before_validation :generate_token, :on => :create
 
  def to_param
