@@ -1,13 +1,6 @@
-<h2>Edit User</h2>
+<h2>Edit User Profile</h2>
+<%= form_for @profile, :url => admin_user_profile_path(@user) do |f| %>
 
-<%= form_for @user do |f|%>
-
-<div class="form-group">
-  <%= f.label :time_zone %>
-  <%= f.time_zone_select :time_zone %>
-</div>
-
-<%= f.fields_for :profile do |f| %>
   <div class="form-group">
     <%= f.label :legal_name %>
     <%= f.text_field :legal_name, :class => "form-control" %>
@@ -42,10 +35,9 @@
     <%= f.label :specialty %>
     <%= f.text_area :specialty, :class => "form-control" %>
   </div>
-<% end %>
 
-<div class="form-group">
-  <%= f.submit "Save", class: "btn btn-primary"%>
-</div>
+  <div class="form-group">
+    <%= f.submit "Submit", :class => "btn btn-primary" %>
+  </div>
 
 <% end %>
