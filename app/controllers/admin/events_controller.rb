@@ -15,7 +15,7 @@ class Admin::EventsController < AdminController
 
   def create
     @event = Event.new(event_params)
-
+    
     if @event.save
       redirect_to admin_events_path
     else
