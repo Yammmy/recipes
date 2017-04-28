@@ -16,3 +16,4 @@
 //= require bootstrap-sprockets
 //= require select2
 //= require_tree .
+//= require nested_form_fields
