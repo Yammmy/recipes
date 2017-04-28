@@ -8,7 +8,7 @@
 
   <div class="form-group">
     <%= f.label :birthday %>
-    <%= f.date_field :birthday, :class => "form-control" %>
+    <%= f.text_field :birthday, :class => "form-control" %>
   </div>
 
   <div class="form-group">
@@ -41,3 +41,7 @@
   </div>
 
 <% end %>
+
+<script>
+  $("#profile_birthday").datepicker({ format: "yyyy-mm-dd", language: "<%= I18n.locale %>" });
+</script>
