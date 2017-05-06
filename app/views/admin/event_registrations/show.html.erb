@@ -1,0 +1,12 @@
+<h1><%= @event.name %></h1>
+
+<h2>报名资料</h2>
+
+<dl>
+  <dt>状态: <%= t(@registration.try(:status), :scope => "registration.status") %></dt>
+  <dt>姓名: <%= @registration.try(:name) %></dt>
+  <dt>E-mail: <%= @registration.try(:email) %></dt>
+  <dt>电话: <%= @registration.try(:cellphone) %></dt>
+  <dt>网站: <%= @registration.try(:website) %></dt>
+  <dt>自我介绍: <%= simple_format @registration.try(:bio) %></dt>
+</dl>

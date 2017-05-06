@@ -25,7 +25,7 @@
 <%= search_form_for @q, :url => admin_event_registrations_path(@event) do |f| %>
   <p><%= f.search_field :name_cont, :placeholder => "姓名", :class => "form-control" %></p>
   <p><%= f.search_field :email_cont, :placeholder => "E-mail", :class => "form-control" %></p>
-  
+
   <%= text_field_tag :registration_id, params[:registration_id], :placeholder => "报名编号，可用,号区隔", :class => "form-control" %>
   <br>
   <% Registration::STATUS.each do |s| %>
@@ -61,7 +61,7 @@
   </tr>
   <% @registrations.each do |registration| %>
     <tr>
-      <td><%= registration.id %></td>
+      <td><%= link_to(registration.id, admin_event_registration_path(@event, registration)) %></td>
       <td><%= registration.ticket.name %></td>
       <td><%= registration.name %></td>
       <td><%= t( registration.status, :scope => "registration.status") %></td>
