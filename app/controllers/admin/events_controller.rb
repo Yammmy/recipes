@@ -1,4 +1,5 @@
 class Admin::EventsController < AdminController
+  before_action :require_editor!
 
   def index
     @events = Event.rank(:row_order).all
@@ -40,7 +41,7 @@ class Admin::EventsController < AdminController
            borderWidth: 1
        }]
      }
-     
+
     if @event.registrations.any?
        dates = (@event.registrations.order("id ASC").first.created_at.to_date..Date.today).to_a
 
