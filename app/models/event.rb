@@ -12,6 +12,9 @@ class Event < ApplicationRecord
 
    belongs_to :category, :optional => true
 
+   has_many :attachments, :class_name => "EventAttachment", :dependent => :destroy
+   accepts_nested_attributes_for :attachments, :allow_destroy => true, :reject_if => :all_blank
+
    validates_presence_of :name, :token
 
    validates_uniqueness_of :token
