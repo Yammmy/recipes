@@ -49,6 +49,8 @@ gem 'axlsx'
 gem 'axlsx_rails'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'letter_opener'
+gem 'premailer-rails'
 
 group :development, :test do
   gem 'rspec-rails'
