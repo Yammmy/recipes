@@ -22,3 +22,6 @@
 
 # Ignore files uploaded by user.
 /public/uploads/*
+
+config/database.yml
+config/secrets.yml

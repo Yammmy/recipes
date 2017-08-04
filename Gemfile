@@ -14,7 +14,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -53,7 +53,12 @@ gem 'letter_opener'
 gem 'premailer-rails'
 gem 'sidekiq'
 
+gem 'mysql2'
+
 group :development, :test do
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+  
   gem 'rspec-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

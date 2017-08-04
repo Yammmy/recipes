@@ -4,7 +4,7 @@ default: &default
   database: rails_recipes
   host: localhost
   username: root
-  password: q1043189ms
+  password: xxxxxxxxxx
 
 development:
   <<: *default
@@ -16,9 +16,10 @@ test:
   database: rails_recipes
 
 production:
+  <<: *default
   adapter: mysql2
   encoding: utf8mb4
   database: rails_recipes
   host: localhost
   username: root
-  password: q1043189ms
+  password: xxxxxxxxxx
