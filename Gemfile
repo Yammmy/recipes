@@ -14,7 +14,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
+gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -53,7 +53,7 @@ gem 'letter_opener'
 gem 'premailer-rails'
 gem 'sidekiq'
 
-gem 'mysql2'
+# gem 'mysql2'
 gem 'whenever', :require => false
 
 group :development, :test do
@@ -79,3 +79,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :production do
+  gem 'mysql2'
+end

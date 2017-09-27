@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   authenticate :user, lambda { |u| u.is_admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
-  
+
   devise_for :users
 
   resources :events do
@@ -46,5 +46,7 @@ Rails.application.routes.draw do
   end
 
   root "events#index"
+
+  get "/location" => "welcome#location"
 
 end
